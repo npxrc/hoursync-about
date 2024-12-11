@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Neil Patrao Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    </head>
-    <body>
-        <div id="captcha">
-            <div id="captcha-container"></div>
-        </div>
-        <div id="main">
-            <section id="hero">
-                <!--Hero section including name and some other stuff idk-->
-                <h1>Neil Patrao</h1>
-                <div id="scroll-down-arrow">
-                    ↓
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil Patrao Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+    <div id="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <h1>Neil Patrao</h1>
+            <p>Welcome to my portfolio!</p>
+            <div id="scroll-down-arrow">↓</div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1>About Me</h1>
+            <p>I'm Neil, a sophomore at Olathe East. Passionate about coding, design, and innovation!</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h1>My Projects</h1>
+            <div class="project-grid">
+                <div class="project">
+                    <h2>Resume</h2>
+                    <p>A showcase of my experiences and achievements.</p>
                 </div>
-            </section>
-            <section id="about">
-                <!--about me-->
-                <h1>I'm Neil, a sophomore at Olathe East</h1>
-                <ul>
-                    <li></li>
-                </ul>
-            </section>
-        </div>
-        <script src="script.js"></script>
-        <script>
-            grecaptcha.render('captcha-container', {'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B', 'theme': 'dark'})
-        </script>
-    </body>
+                <div class="project">
+                    <h2>Interests</h2>
+                    <p>A deep dive into what drives me creatively and intellectually.</p>
+                </div>
+                <div class="project">
+                    <h2>Watercolor</h2>
+                    <p>Exploring my artistic side with watercolor painting.</p>
+                </div>
+                <div class="project">
+                    <h2>Facade</h2>
+                    <p>Innovative facade design concepts and projects.</p>
+                </div>
+                <div class="project">
+                    <h2>House Design</h2>
+                    <p>Modern and sustainable house designs I've created.</p>
+                </div>
+                <div class="project">
+                    <h2>ACE Projects</h2>
+                    <p>Architectural, construction, and engineering projects I'm proud of.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        grecaptcha.render('captcha-container', {
+            'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B',
+            'theme': 'dark'
+        });
+    </script>
+</body>
 </html>
-<!-- requirements: front page, resume, interests, watercolor, facade, house design, ace projects, etc -->
