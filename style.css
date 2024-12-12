@@ -1,6 +1,7 @@
 /* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
-    font-family: Inter, sans-serif;
+    font-family: Raleway, sans-serif;
     --stripe-color: #fff;
     --bg: var(--stripe-color);
     --maincolor: var(--bg);
@@ -14,6 +15,9 @@ body {
     align-items: center;
     color: white;
     background: rgb(20,20,20) 
+}
+body.overlay-open{
+    overflow: hidden;
 }
 /* Hero Section */
 .hero {
@@ -137,4 +141,58 @@ footer {
 
 #main{
     width: 100%;
+}
+
+/* Overlay that dims the background */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);  /* Dimmed background */
+    display: none;  /* Initially hidden */
+    z-index: 9998;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* The iframe container styles */
+#iframe-container {
+    width: 80%;
+    height: 90%;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: rgb(20,20,20);
+    border-radius: 20px 20px 0 0;  /* Rounded corners at top */
+    overflow: hidden;
+    position: relative;
+    animation: slideUp 0.4s ease-in-out forwards;
+}
+
+/* The iframe itself */
+#iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Animation for the iframe appearing from the bottom */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Animation for the iframe appearing from the bottom */
+@keyframes slideDown {
+    to {
+        transform: translateY(100%);
+    }
+    from {
+        transform: translateY(0);
+    }
 }

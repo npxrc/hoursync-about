@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>White Box Gallery - iFrame</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+            body{
+                font-family: 'Raleway', 'Open Sans', sans-serif;
+                background-color: rgb(20,20,20);
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+            #main{
+                text-align: center;
+                width: 100%;
+            }
+            #main h1{
+                font-size: 3rem;
+            }
+            hr{
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+            }
+            #content-container{
+                padding: 50px;
+                font-size: 1rem;
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <img src="../images/white-box-gallery.png" alt="A photo of the concept White Box Gallery." style="width: 100%;">
+            <div id="content-container">
+                <h1>White Box Gallery</h1>
+                <hr>
+                <p style="text-align: left;">
+                    The White Box Gallery is an art gallery that was drafted for the American Royal.
+                    American Royal is an organisation that specalises in horse showings and races, barbecue showings, and has been established for <u><b id="years"></b> years.</u>
+                    <br>
+                    <br>
+                    The ACE Mentorship program of Kansas City has tasked its mentors with building a gallery for the American Royal.
+                    It needs to support multiple types of art, and should have a main exhibition room, Theatre, and classroom, amongst other requirements.
+                    <br>
+                    <br>
+                    The site plan for our project is below.
+                </p>
+                <img src="../images/site-plan--wbg.png" alt="A photo of the Site Plan for the White Box Gallery" style="width: 90%">
+                <p style="text-align: left;">
+                    For the White Box Gallery, we were given different plots of land to choose from (A, B, and C). We chose site A because it had a slope only on one side of the plot, making it easier for us to construct a building on the plot.
+                    
+                </p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('years').innerHTML=`${(new Date().getFullYear())-1899}`;
+        </script>
+    </body>
+</html>

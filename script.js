@@ -59,3 +59,44 @@ scrollArrow.addEventListener('click', () => {
     const nextSection = document.querySelector('#about');
     nextSection.scrollIntoView({ behavior: 'smooth' });
 });
+
+// opening projects
+function openProject(name) {
+    // Create the URL for the iframe (based on the name parameter)
+    const iframeSrc = `assets/frames/${name}.html`;
+
+    // Select the overlay and iframe elements
+    const overlay = document.getElementById("overlay");
+    const iframe = document.getElementById("iframe");
+
+    // Set the iframe source to the correct file
+    iframe.src = iframeSrc;
+
+    // Show the overlay
+    overlay.style.display = "flex";
+
+    // Add an event listener to close the overlay when clicked
+    overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+            closeOverlay();
+        }
+    });
+    document.addEventListener('keydown', function(e){
+        if (e.key=="Escape"){
+            closeOverlay();
+        }
+    })
+    document.body.classList.add('overlay-open')
+}
+
+function closeOverlay() {
+    // Hide the overlay
+    document.getElementById('iframe-container').style.animation = 'slideDown 0.5s ease-in-out forwards';
+    document.body.classList.remove('overlay-open')
+    setTimeout(() => {
+        document.getElementById("overlay").style.display = "none";
+        // Optionally, you can clear the iframe's src to stop it from continuing to load
+        document.getElementById("iframe").src = "";
+        document.getElementById('iframe-container').style.animation = 'slideUp 0.5s ease-in-out forwards';
+    }, 500);
+}

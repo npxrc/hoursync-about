@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Neil Patrao Portfolio</title>
         <link rel="stylesheet" href="style.css">
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js" async></script>
     </head>
     <body>
         <div id="main">
@@ -29,36 +29,45 @@
             <section id="projects" class="section">
                 <h1>My Projects</h1>
                 <div class="project-grid">
-                    <div class="project">
+                    <div class="project" onclick="openProject('resume')">
                         <h2>Resumé</h2>
                         <p>A showcase of my experiences and achievements.</p>
                     </div>
-                    <div class="project">
+                    <div class="project" onclick="openProject('hoursync')">
                         <h2>HourSync</h2>
                         <p>A new and modern way for students to submit eHours.</p>
                     </div>
-                    <div class="project">
+                    <div class="project" onclick="openProject('whitebox')">
                         <h2>White Box Gallery</h2>
                         <p>A concept gallery made for the American Royal to showcase artwork</p>
                     </div>
-                    <div class="project">
+                    <div class="project" onclick="openProject('watercolor')">
                         <h2>Watercolor</h2>
                         <p>Exploring watercolor painting by working with a birds eyeview of a building</p>
                     </div>
-                    <div class="project">
+                    <div class="project" onclick="openProject('tictoe')">
                         <h2>Tic Toe</h2>
                         <p>A modern and unfair version of Tic Tac Toe, avaiable as a website or Windows app</p>
                     </div>
-                    <div class="project">
-                        <h2>JackCox</h2>
+                    <div class="project" onclick="openProject('corrupt')">
+                        <h2>Corrupt Product</h2>
                         <p>A knock off version of Jackbox's Patently Stupid, runs off of a local Node.JS server</p>
+                    </div>
+                    <div class="project" href="https://github.com/npxrc" onclick="window.open('https://github.com/npxrc')">
+                        <h2>See my GitHub for everything! 👾</h2>
+                        <div id="scroll-down-arrow">→</div>
                     </div>
                 </div>
             </section>
         </div>
+        <div id="overlay" style="display: none;">
+            <div id="iframe-container">
+                <iframe id="iframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>        
 
         <script src="script.js"></script>
-        <script>
+        <script defer>
             grecaptcha.render('captcha-container', {
                 'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B',
                 'theme': 'dark'
