@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HourSync | Neil Patrao</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="main">
+            <section id="hero" class="hero">
+                <h1>HourSync</h1>
+                <p>A modern replacement for the eHours Portal</p>
+            </section>
+            <section>
+                <div class="left center-items">
+                    <h1 style="font-size: 3rem;">Why HourSync?</h1>
+                </div>
+                <div class="right center-items" style="background-color: #638eb6; font-size: large;">
+                    <div>
+                        HourSync is...
+                        <br>
+                        <ul>
+                            <li>a modern replacement for the default eHours logging website.</li>
+                            <li>light on your computer, making the experience faster.</li>
+                            <li>more acessible, being compliant with Windows accesibility themes</li>
+                            <li>more feature rich, with Drafts and more information</li>
+                            <li>free</li>
+                        </ul>
+
+                        <div id="seethedifferencething">
+                            <div class="container">
+                                <div class="image-wrapper">
+                                    <img src="image1.jpg" alt="Background Image">
+                                    <div class="overlay">
+                                    <img src="image2.png" alt="A screenshot of HourSync">
+                                    </div>
+                                    <div class="slider"></div>
+                                </div>
+                            </div>                              
+                        
+                            <script>
+                                const container = document.querySelector('.container');
+                                const slider = document.querySelector('.slider');
+                                const overlay = document.querySelector('.overlay');
+                                let isDragging = false;
+
+                                container.addEventListener('mousedown', (e) => {
+                                    isDragging = true;
+                                    moveSlider(e);
+                                });
+
+                                container.addEventListener('mousemove', (e) => {
+                                    if (isDragging) {
+                                        moveSlider(e);
+                                    }
+                                });
+
+                                container.addEventListener('mouseup', () => {
+                                    isDragging = false;
+                                });
+
+                                container.addEventListener('mouseleave', () => {
+                                    isDragging = false;
+                                });
+
+                                function moveSlider(e) {
+                                    const containerRect = container.getBoundingClientRect();
+                                    let offsetX = e.clientX - containerRect.left;
+
+                                    if (offsetX < 0) offsetX = 0;
+                                    if (offsetX > containerRect.width) offsetX = containerRect.width;
+
+                                    const percentage = (offsetX / containerRect.width) * 100;
+
+                                    // Move the slider and adjust overlay width
+                                    slider.style.left = `${percentage}%`;
+                                    overlay.style.width = `${percentage}%`;
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>

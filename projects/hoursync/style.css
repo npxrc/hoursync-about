@@ -1,0 +1,153 @@
+/* Base styles */
+:root {
+    font-family: Inter, sans-serif;
+    --stripe-color: #fff;
+    --bg: var(--stripe-color);
+    --maincolor: var(--bg);
+}
+#main {
+    width: 100%;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: rgb(20, 20, 20);
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(78, 81, 185, 1) 0%, rgba(99, 142, 182, 1) 15%, rgba(162, 193, 226, 1) 50%, rgba(99, 142, 182, 1) 85%, rgba(78, 81, 185, 1) 100%);
+    color: white;
+    background-size: 300%, 200%;
+    background-position: -50% -50%, -50% -50%;
+    animation: smoothBg 60s linear infinite;
+}
+
+/* Fix the position of the text */
+.hero h1 {
+    position: sticky;
+    top: 0;  /* Keep the h1 at the top of the viewport */
+    z-index: 2;
+    font-size: 3rem;
+    margin: 0.5rem 0;
+    color: #fff;
+    text-align: center;
+}
+
+/* Hero Section Background Gradient Animation */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, #000 40%, transparent 70%);
+    mix-blend-mode: difference;
+}
+
+@keyframes smoothBg {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+/* Sections */
+section {
+    height: 100vh;
+    width: 100%;
+}
+section:nth-of-type(even){
+    background-color: rgb(30,30,30);
+}
+
+section .left, section .right{
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Includes padding and border in width/height */
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+.center-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Container holds both images and the slider */
+.container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+  
+  /* Wrapper for the images */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+  
+  /* The background image (first image) */
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+  
+  /* Overlay for the second image (foreground) */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%; /* Initial width of the overlay image */
+    height: 100%;
+    overflow: hidden;
+}
+  
+/* The second image that will be shown as a foreground */
+.overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+  
+/* The slider itself */
+.slider {
+    position: absolute;
+    top: 0;
+    left: 50%; /* Start in the middle */
+    width: 20px; /* Adjust size of the slider */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: ew-resize; /* Makes the slider draggable left/right */
+    z-index: 10;
+}
+  
+/* Optional styling to improve visibility and interaction */
+.slider:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}

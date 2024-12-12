@@ -18,14 +18,14 @@ body {
 /* Hero Section */
 .hero {
     width: 100%;
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle, rgba(26,162,193,1) 0%, rgba(206,147,218,1) 35%, rgba(185,93,78,1) 54%, rgba(226,211,162,1) 100%);
+    background: linear-gradient(90deg, rgba(26,162,193,1) 0%, rgba(206,147,218,1) 25%, rgba(237,93,131,1) 50%, rgba(206,147,218,1) 75%, rgba(26,162,193,1) 100%);
     color: white;
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
@@ -100,9 +100,25 @@ body {
     background: rgb(35,35,35);
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 10px 10px 269px -83px rgba(153,153,153,1);
+    -moz-box-shadow: 10px 10px 269px -83px rgba(153,153,153,1);
+    box-shadow: 10px 10px 269px -83px rgba(153,153,153,1);
     text-align: left;
+    transition: transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out; /* Add transition for box-shadow */
+    transform-style: preserve-3d;
+    perspective: 1000px; /* Add perspective for better 3D effect */
 }
+
+.project:hover {
+    /* Add white glow effect on hover with a blur */
+    box-shadow: 0 0 50px 5px rgba(255, 255, 255, 0.7); /* White glow with subtle blur */
+    cursor: pointer;
+}
+.project:active{
+    scale: 0.9
+}
+
+/* Project hover state */
 .project h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
@@ -110,6 +126,7 @@ body {
 .project p {
     font-size: 1rem;
 }
+
 /* Footer */
 footer {
     text-align: center;

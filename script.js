@@ -1,23 +1,58 @@
 //fade in sections stuff
 function $(e){return document.getElementById(e)}
-const fadeInSections = document.getElementsByTagName('section')
+// JavaScript for hover effects
+document.addEventListener('DOMContentLoaded', () => {
+    const tiltContainers = document.querySelectorAll('.project');
+    let isMouseMoving = false;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Uncomment the line below to stop observing after it becomes visible
-            // observer.unobserve(entry.target);
-        } else{
-            entry.target.classList.remove('visible')
+    tiltContainers.forEach((container) => {
+        container.style.transition = "all 250ms ease";
+        container.style.willChange = "transform"; // Suggest to the browser that transform is changing frequently
+
+        let tiltX = 0;
+        let tiltY = 0;
+
+        container.addEventListener('mousemove', (e) => {
+            isMouseMoving = true;
+
+            // Calculate tilt effect
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            tiltX = ((centerY - y) / centerY) * 20; // Adjust the multiplier for tilt effect
+            tiltY = ((x - centerX) / centerX) * 20; // Adjust the multiplier for tilt effect
+
+            // Scale the hovered container
+            tiltContainers.forEach((otherContainer) => {
+                if (otherContainer === container) {
+                    otherContainer.style.transform = `scale(1.1) perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+                } else {
+                    otherContainer.style.transform = "scale(0.95)";
+                }
+            });
+        });
+
+        container.addEventListener('mouseleave', () => {
+            // Reset all containers' transforms when mouse leaves
+            tiltContainers.forEach((cont) => {
+                cont.style.transform = "scale(1) perspective(1000px) rotateX(0deg) rotateY(0deg)";
+            });
+            isMouseMoving = false;
+        });
+
+        // Use requestAnimationFrame for smoother transitions
+        function animate() {
+            if (isMouseMoving) {
+                requestAnimationFrame(animate);
+            }
         }
+        animate(); // Start the animation loop
     });
-}, { threshold: 0.1 }); // Adjust the threshold as needed
+});
 
-// Observe each section
-for (let element of fadeInSections){
-    observer.observe(element)
-}
 
 const scrollArrow = document.getElementById('scroll-down-arrow');
 scrollArrow.addEventListener('click', () => {
