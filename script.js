@@ -51,6 +51,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         animate(); // Start the animation loop
     });
+
+    const heroDiv = document.querySelector('#hero div');
+    const scrollPosition = window.scrollY;
+    const heroHeight = document.querySelector('#hero').offsetHeight;
+    const offset = window.innerHeight / 10;
+
+    // Update the top property of the hero div
+    heroDiv.style.top = `${scrollPosition + offset - 50}px`;
+
+    // Adjust the opacity or z-index based on scroll position
+    if (scrollPosition >= heroHeight) {
+        heroDiv.style.zIndex = '0'; // Let the next sections come over
+        heroDiv.style.opacity = '0'; // Optional: make it disappear as you scroll
+    } else {
+        heroDiv.style.zIndex = '1'; // Keep it on top of the hero
+        heroDiv.style.opacity = '1'; // Make it fully visible
+    }
 });
 
 
@@ -74,6 +91,7 @@ function openProject(name) {
 
     // Show the overlay
     overlay.style.display = "flex";
+    overlay.style.opacity = "1";
 
     // Add an event listener to close the overlay when clicked
     overlay.addEventListener("click", function(event) {
@@ -93,6 +111,7 @@ function closeOverlay() {
     // Hide the overlay
     document.getElementById('iframe-container').style.animation = 'slideDown 0.5s ease-in-out forwards';
     document.body.classList.remove('overlay-open')
+    document.getElementById("overlay").style.opacity = "0";
     setTimeout(() => {
         document.getElementById("overlay").style.display = "none";
         // Optionally, you can clear the iframe's src to stop it from continuing to load
@@ -100,3 +119,29 @@ function closeOverlay() {
         document.getElementById('iframe-container').style.animation = 'slideUp 0.5s ease-in-out forwards';
     }, 500);
 }
+
+setTimeout(() => {
+    grecaptcha.render('captcha', {
+        'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B',
+        'theme': 'dark'
+    });
+}, 100);
+
+window.addEventListener('scroll', (e) => {
+    const heroDiv = document.querySelector('#hero div');
+    const scrollPosition = window.scrollY;
+    const heroHeight = document.querySelector('#hero').offsetHeight;
+    const offset = window.innerHeight / 10;
+
+    // Update the top property of the hero div
+    heroDiv.style.top = `${scrollPosition + offset - 50}px`;
+
+    // Adjust the opacity or z-index based on scroll position
+    if (scrollPosition >= heroHeight) {
+        heroDiv.style.zIndex = '0'; // Let the next sections come over
+        heroDiv.style.opacity = '0'; // Optional: make it disappear as you scroll
+    } else {
+        heroDiv.style.zIndex = '1'; // Keep it on top of the hero
+        heroDiv.style.opacity = '1'; // Make it fully visible
+    }
+});

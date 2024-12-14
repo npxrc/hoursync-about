@@ -34,6 +34,7 @@ body.overlay-open{
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
     animation: smoothBg 60s linear infinite;
+    z-index: 1;
 }
 .hero::after {
     content: "";
@@ -72,6 +73,10 @@ body.overlay-open{
     margin-top: 1rem;
     animation: blink 2s infinite;
 }
+#hero div{
+    position: relative;
+    text-align: center;
+}
 @keyframes blink {
     0%, 100% {
     opacity: 1;
@@ -84,6 +89,8 @@ body.overlay-open{
 .section {
     padding: 2rem;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 .section h1 {
     font-size: 2rem;
@@ -155,6 +162,8 @@ footer {
     z-index: 9998;
     justify-content: center;
     align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
 /* The iframe container styles */
@@ -195,4 +204,18 @@ footer {
     from {
         transform: translateY(0);
     }
+}
+
+/*captcha*/
+#captcha-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
 }

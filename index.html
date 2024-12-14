@@ -5,28 +5,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Neil Patrao Portfolio</title>
         <link rel="stylesheet" href="style.css">
-        <script src="https://www.google.com/recaptcha/api.js" async></script>
     </head>
     <body>
+        <div id="captcha-container">
+            <div id="captcha">
+
+            </div>
+        </div>
         <div id="main">
             <!-- Hero Section -->
             <section id="hero" class="hero">
-                <h1>Neil Patrao</h1>
-                <p>Student of Design Academy at Olathe East</p>
-                <div id="scroll-down-arrow">↓</div>
+                <div>
+                    <h1>Neil Patrao</h1>
+                    <p>Student of Design Academy at Olathe East</p>
+                    <div id="scroll-down-arrow">↓</div>
+                </div>
             </section>
 
             <!-- About Section -->
-            <section id="about" class="section">
+            <section id="about" class="section" style="padding-bottom: 0;">
                 <h1>About Me</h1>
-                <p>I'm a sophomore at Olathe East. I've played the violin for 5 years and I played the piano for 7 years. I work with Creative Cloud software and Autodesk software, such as Photoshop, Illustrator, Revit, and Civil 3D, to name a few.<br><br>On the side, I do software development and web design. I work primarily with HTML/CSS but have used C# WinUI 3 to make a few apps.</p>
+                <p>I'm a sophomore at Olathe East. I work with Creative Cloud software and Autodesk software, such as Photoshop, Illustrator, Revit, and Civil 3D, to name a few.<br><br>On the side, I do software development and web design. I work primarily with HTML/CSS but have used C# WinUI 3 to make a few apps. On the side, I've played the violin for 5 years and I played the piano for 7 years. </p>
             </section>
 
             <!-- penis penis penis penis pnis penis penis penis penis penis penis penis penis penis penis penis lalalalalalalala-->
             <!-- the line above was added by Linnaea Xie not me-->
 
             <!-- Projects Section -->
-            <section id="projects" class="section">
+            <section id="projects" class="section" style="padding-top: 0;">
                 <h1>My Projects</h1>
                 <div class="project-grid">
                     <div class="project" onclick="openProject('resume')">
@@ -47,11 +53,15 @@
                     </div>
                     <div class="project" onclick="openProject('tictoe')">
                         <h2>Tic Toe</h2>
-                        <p>A modern and unfair version of Tic Tac Toe, avaiable as a website or Windows app</p>
+                        <p>A modern and unfair version of Tic Tac Toe, available as a website or Windows app</p>
                     </div>
                     <div class="project" onclick="openProject('corrupt')">
                         <h2>Corrupt Product</h2>
                         <p>A knock off version of Jackbox's Patently Stupid, runs off of a local Node.JS server</p>
+                    </div>
+                    <div class="project" onclick="openProject('bigweather')">
+                        <h2>Weather App</h2>
+                        <p>A simple weather app that fetches data from the Weather.Gov API</p>
                     </div>
                     <div class="project" href="https://github.com/npxrc" onclick="window.open('https://github.com/npxrc')">
                         <h2>See my GitHub for everything! 👾</h2>
@@ -65,13 +75,7 @@
                 <iframe id="iframe" src="" frameborder="0"></iframe>
             </div>
         </div>        
-
         <script src="script.js"></script>
-        <script defer>
-            grecaptcha.render('captcha-container', {
-                'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B',
-                'theme': 'dark'
-            });
-        </script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </body>
 </html>
