@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script>
+            // 404 script because cloudflare is a piece of shit
+            if (location.pathname !== '/' && location.pathname !== '/index.html')
+                location.replace(`/404?og=${location.pathname}`)
+        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Neil Patrao Portfolio</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="captcha-container">
-            <div id="captcha">
-
-            </div>
-        </div>
         <div id="main">
             <!-- Hero Section -->
             <section id="hero" class="hero">
@@ -25,11 +25,25 @@
             <!-- About Section -->
             <section id="about" class="section" style="padding-bottom: 0;">
                 <h1>About Me</h1>
-                <p>I'm a sophomore at Olathe East. I work with Creative Cloud software and Autodesk software, such as Photoshop, Illustrator, Revit, and Civil 3D, to name a few.<br><br>On the side, I do software development and web design. I work primarily with HTML/CSS but have used C# WinUI 3 to make a few apps. On the side, I've played the violin for 5 years and I played the piano for 7 years. </p>
+                <p>
+                    I'm a sophomore at Olathe East.
+                    I work with Creative Cloud software and Autodesk software, such as Photoshop, Illustrator, Revit, and Civil 3D, to name a few.
+                    <br>
+                    <br>
+                    On the side, I do software development and web design.
+                    I work primarily with HTML/CSS but have used C# WinUI 3 to make a few apps.
+                    I've also played the violin for 5 years and I played the piano for 7 years.
+                    <br>
+                    <br>
+                    My software development career began during COVID-19, when I was bored. So I decided to learn HTML (web structure) and some CSS (web styling).
+                    Atom by GitHub was my first app I learned to code in because of a tutorial on YouTube.
+                    I learned CSS through <a href="https://www.youtube.com/watch?v=bWPMSSsVdPk&list=PLlj9BrHKq9WKaz8UV3BjEqicn-C3qHxy4&pp=iAQB">this Jake Wright tutorial playlist.</a>
+                    I also remember using Autocode (now defunct) to host my middle school's Robotics Club website, and the layout was... maybe a bit similar to the Jake Wright tutorial... anyways.
+                    <br>
+                    <br>
+                    Below are some of the projects that I have worked on.
+                </p>
             </section>
-
-            <!-- penis penis penis penis pnis penis penis penis penis penis penis penis penis penis penis penis lalalalalalalala-->
-            <!-- the line above was added by Linnaea Xie not me-->
 
             <!-- Projects Section -->
             <section id="projects" class="section" style="padding-top: 0;">
@@ -76,6 +90,5 @@
             </div>
         </div>        
         <script src="script.js"></script>
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </body>
 </html>

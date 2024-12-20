@@ -120,12 +120,12 @@ function closeOverlay() {
     }, 500);
 }
 
-setTimeout(() => {
-    grecaptcha.render('captcha', {
-        'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B',
-        'theme': 'dark'
-    });
-}, 100);
+// setTimeout(() => {
+//     grecaptcha.render('captcha', {
+//         'sitekey': '6LcBUJEqAAAAAIwY6EmAHXNdba7pucj_W-10q36B',
+//         'theme': 'dark'
+//     });
+// }, 100);
 
 window.addEventListener('scroll', (e) => {
     const heroDiv = document.querySelector('#hero div');

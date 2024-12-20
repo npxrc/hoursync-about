@@ -72,6 +72,7 @@ body.overlay-open{
     color: #fff;
     margin-top: 1rem;
     animation: blink 2s infinite;
+    cursor: pointer;
 }
 #hero div{
     position: relative;
