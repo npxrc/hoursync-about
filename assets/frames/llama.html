@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Llama Cup - iFrame</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+			body {
+				font-family: "Raleway", "Open Sans", sans-serif;
+				background-color: rgb(20, 20, 20);
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0;
+				padding: 0;
+			}
+			#main {
+				text-align: center;
+				width: 100%;
+			}
+			#main h1 {
+				font-size: 3rem;
+			}
+			hr {
+				width: 80%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			#content-container {
+				padding: 50px;
+				font-size: 1rem;
+				box-sizing: border-box;
+			}
+			.llama {
+				width: 100%;
+				height: 20% !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<img
+				src="../images/llama.jpg"
+				alt="A llama. Nothing else."
+				class="llama"
+			/>
+			<div id="content-container">
+				<h1>Llama Cup</h1>
+				<hr />
+				<p style="text-align: center">
+					Llama Cup is a knock off version of Camel Cup. Camel Cup is
+					a game where you roll dice to move camels, with the
+					objective of having the most money. The way to make money is
+					by betting on winners of the leg (a leg ends after all
+					camels have moved) or on winners of the overall race. You
+					can also roll the dice, awarding one coin.
+					<br />
+					<br />
+					So how is my spinoff different? Great question! Llama cup
+					works with as many players as you want, compared to the
+					board game's mere 8 players. Another difference is that this
+					edition is more approachable for beginners. The base game
+					seems daunting at first, but Llama Cup simplifies the game,
+					only showing you legal moves, and Llama Cup makes it simple
+					to understand.
+					<br />
+					<br />
+					Lets take a look at an example:
+					<br />
+					<br />
+					<img
+						src="../images/ex1.png"
+						alt="A photo of the Llama Cup gameboard"
+					/>
+					<br />
+					Llama Cup simplifies your view into four options: Roll dice,
+					bet on the leg, and betting on the winner/loser of the game.
+					<br />
+					<br />
+					Lets take a look at the game after someone has made rolled
+					the dice.
+					<br />
+					<br />
+					<img
+						src="../images/ex2.png"
+						alt="A photo of the Llama Cup gameboard after two users have rolled"
+					/>
+					<br />
+					<br />
+					In this next example, two players have rolled the dice. This
+					is reflected in the dice on the left, which correspond to
+					the color of the camel, and the number that the person
+					rolled. Furthermore, in the top right, you can see what move
+					a player made. In this example, the player
+					<code>edg</code> rolled a Blue 2.
+					<br />
+					<br />
+					Let's take a look at how betting works.
+					<br />
+					<br />
+					<img
+						src="../images/ex3.png"
+						alt="A photo of the betting screen from Llama Cup"
+					/>
+					<br />
+					<br />
+					In this example, the gameboard is highlighted, and a tray
+					revealing the cards which can be drawn is displayed. Being
+					early is important in this game! The later you bet, the less
+					you get rewarded! While the top cards say 5 coins will be
+					awarded, the next card says 3 coins, the next says 2, and
+					nobody else can bet on that camel.
+
+					<br />
+                    <hr />
+                    <br />
+					Llama Cup was a lot of fun for me to remake as I've learned
+					a lot on managing users, JavaScript modules, and even
+					communicating effectively between the client and user
+					through Socket IO
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
